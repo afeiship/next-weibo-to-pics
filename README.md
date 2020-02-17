@@ -1,12 +1,14 @@
 # next-weibo-to-pics
-> Sina weibo pics to array
+> Sina weibo pics to array.
 
-## install:
+## installation
 ```bash
-npm install -S afeiship/next-weibo-to-pics --registry=https://registry.npm.taobao.org
+npm install -S @feizheng/next-weibo-to-pics
 ```
 
-## usage:
+## usage
 ```js
+import '@feizheng/next-weibo-to-pics';
+
 //DOCS here!
 ```
