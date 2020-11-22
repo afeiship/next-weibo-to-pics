@@ -3,7 +3,7 @@
  * description: Sina weibo pics to array.
  * homepage: https://github.com/afeiship/next-weibo-to-pics
  * version: 1.0.0
- * date: 2020-11-22 16:44:34
+ * date: 2020-11-22 16:47:50
  * license: MIT
  */
 
