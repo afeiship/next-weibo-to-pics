@@ -21,5 +21,14 @@
         }
       ]);
     });
+
+
+    test('bad response condition should get emtpy array', ()=>{
+      const html = `'    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />\n    <script type="text/javascript">document.domain="sina.com.cn";</script>\n{"code":"A20001","data":{"count":-1,"data":"eyJhcHAiOiJtaW5pYmxvZyIsImNvdW50IjotMSwidGltZSI6MTYyMDg4OTIxOC4xMiwicGljcyI6eyJwaWNfMSI6eyJyZXQiOi0xLCJuYW1lIjoicGljXzEifX19","pics":{"pic_1":{"ret":-1,"name":"pic_1"}}}}'`;
+
+      const items = nx.weiboToPics(html);
+      expect(items).toEqual([])
+    })
+
   });
 })();
