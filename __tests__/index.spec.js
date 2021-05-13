@@ -2,51 +2,22 @@
   require('../src');
 
   describe('api.basic test', () => {
-    test('nx.weiboToPics', function () {
-      var obj = {
-        pics: {
-          pic_2: {
-            width: 640,
-            size: 95205,
-            ret: 1,
-            height: 1138,
-            name: 'pic_2',
-            pid: 'xx1'
-          },
-          pic_1: {
-            width: 746,
-            size: 103572,
-            ret: 1,
-            height: 594,
-            name: 'pic_1',
-            pid: 'xx2'
-          }
-        }
-      };
+    test('nx.weiboToPics should get array', function () {
+      const html = `<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">document.domain="sina.com.cn";</script>
+{"code":"A00006","data":{"count":1,"data":"eyJ1aWQiOjM2NjE4MzI4MDMsImFwcCI6Im1pbmlibG9nIiwiY291bnQiOjEsInRpbWUiOjE2MjA4ODIyNTQuNTMzLCJwaWNzIjp7InBpY18xIjp7IndpZHRoIjoyMDAsInNpemUiOjkzODksInJldCI6MSwiaGVpZ2h0IjoyMDAsIm5hbWUiOiJwaWNfMSIsInBpZCI6ImRhNDMyMjYzZ3kxZ3FncHUzdTBhbWoyMDVrMDVrM3loIn19fQ==","pics":{"pic_1":{"width":200,"size":9389,"ret":1,"height":200,"name":"pic_1","pid":"da432263gy1gqgpu3u0amj205k05k3yh"}}}}`;
 
-      var pics = obj.pics;
-      var rs = nx.weiboToPics(pics);
-
-      // console.log(rs);
-
-      expect(rs instanceof Array).toBe(true);
-      expect(rs.length).toBe(2);
-      expect(rs).toEqual([
+      const items = nx.weiboToPics(html);
+      expect(items).toEqual([
         {
-          width: 746,
-          size: 103572,
+          width: 200,
+          size: 9389,
           ret: 1,
-          height: 594,
+          height: 200,
           name: 'pic_1',
-          pid: 'xx2'
-        },
-        {
-          width: 640,
-          size: 95205,
-          ret: 1,
-          height: 1138,
-          name: 'pic_2',
-          pid: 'xx1'
+          pid: 'da432263gy1gqgpu3u0amj205k05k3yh',
+          type: 'jpg',
+          url: 'https://tva1.sinaimg.cn/large/da432263gy1gqgpu3u0amj205k05k3yh.jpg'
         }
       ]);
     });

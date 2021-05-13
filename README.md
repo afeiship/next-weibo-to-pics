@@ -1,5 +1,5 @@
 # next-weibo-to-pics
-> Sina weibo pics to array.
+> Sina weibo response to array.
 
 [![version][version-image]][version-url]
 [![license][license-image]][license-url]
@@ -15,49 +15,25 @@ npm install -S @jswork/next-weibo-to-pics
 ```js
 import '@jswork/next-weibo-to-pics';
 
-// input
-const obj = {
-  pics: {
-    pic_2: {
-      width: 640,
-      size: 95205,
-      ret: 1,
-      height: 1138,
-      name: 'pic_2',
-      pid: 'xx1'
-    },
-    pic_1: {
-      width: 746,
-      size: 103572,
-      ret: 1,
-      height: 594,
-      name: 'pic_1',
-      pid: 'xx2'
-    }
-  }
-};
+const html = `<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">document.domain="sina.com.cn";</script>
+{"code":"A00006","data":{"count":1,"data":"eyJ1aWQiOjM2NjE4MzI4MDMsImFwcCI6Im1pbmlibG9nIiwiY291bnQiOjEsInRpbWUiOjE2MjA4ODIyNTQuNTMzLCJwaWNzIjp7InBpY18xIjp7IndpZHRoIjoyMDAsInNpemUiOjkzODksInJldCI6MSwiaGVpZ2h0IjoyMDAsIm5hbWUiOiJwaWNfMSIsInBpZCI6ImRhNDMyMjYzZ3kxZ3FncHUzdTBhbWoyMDVrMDVrM3loIn19fQ==","pics":{"pic_1":{"width":200,"size":9389,"ret":1,"height":200,"name":"pic_1","pid":"da432263gy1gqgpu3u0amj205k05k3yh"}}}}`;
 
-
-// output:
+const items = nx.weiboToPics(html);
+/*
 [
   {
-    width: 746,
-    size: 103572,
+    width: 200,
+    size: 9389,
     ret: 1,
-    height: 594,
+    height: 200,
     name: 'pic_1',
-    pid: 'xx2'
-  },
-  {
-    width: 640,
-    size: 95205,
-    ret: 1,
-    height: 1138,
-    name: 'pic_2',
-    pid: 'xx1'
+    pid: 'da432263gy1gqgpu3u0amj205k05k3yh',
+    type: 'jpg',
+    url: 'https://tva1.sinaimg.cn/large/da432263gy1gqgpu3u0amj205k05k3yh.jpg'
   }
 ]
-
+*/
 ```
 
 ## license
