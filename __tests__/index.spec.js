@@ -16,7 +16,7 @@
           height: 200,
           name: 'pic_1',
           pid: 'da432263gy1gqgpu3u0amj205k05k3yh',
-          type: 'jpg',
+          format: 'jpg',
           url: 'https://tva1.sinaimg.cn/large/da432263gy1gqgpu3u0amj205k05k3yh.jpg'
         }
       ]);
