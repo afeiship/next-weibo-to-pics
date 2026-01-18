@@ -10,7 +10,8 @@ nx.weiboToPics = function (inResponse, inOptions) {
   var pics = nx.get(response, 'data.pics', {});
   var count = nx.get(response, 'data.count');
   if (count === -1) return [];
-  return nx.map(pics, (_, value) => {
+  return Object.keys(pics).map((key) => {
+    const value = pics[key];
     var pid = value.pid;
     value.format = pid.charAt(21) === 'g' ? 'gif' : 'jpg';
     value.url = [options.baseURL, '/large/', pid, '.', value.format].join('');
