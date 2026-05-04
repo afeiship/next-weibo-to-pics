@@ -19,8 +19,8 @@ nx.weiboToPics = function (inResponse, inOptions) {
   });
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = nx.weiboToPics;
-}
+// if (typeof module !== 'undefined' && module.exports) {
+//   module.exports = nx.weiboToPics;
+// }
 
 export default nx.weiboToPics;
